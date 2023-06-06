@@ -5,11 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * <p>
- * 
- * </p>
- *
- * @author mmzsit
+ * @author mmzsblog.cn
  * @since 2023-06-06
  */
 @Data

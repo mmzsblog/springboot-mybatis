@@ -2,6 +2,7 @@ package com.mmzsblog.mybatis.controller;
 
 
 import com.mmzsblog.mybatis.api.CommonResult;
+import com.mmzsblog.mybatis.service.IUserOtherService;
 import com.mmzsblog.mybatis.service.IUserTestService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,24 +11,31 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
- * <p>
- *  前端控制器
- * </p>
+ * 测试多数据源
  *
- * @author mmzsit
+ * @author mmzsblog.cn
  * @since 2023-06-06
  */
 @RestController
-@RequestMapping("/userTest")
-public class UserTestController {
+@RequestMapping("/multiple")
+public class MultipleController {
 
     @Resource
     private IUserTestService userTestService;
 
-    @GetMapping("/test")
-    public CommonResult<?> test() {
+    @Resource
+    private IUserOtherService userOtherService;
+
+    @GetMapping("/master")
+    public CommonResult<?> testMaster() {
         return CommonResult.success(userTestService.test());
     }
+
+    @GetMapping("/slave")
+    public CommonResult<?> testSlave() {
+        return CommonResult.success(userOtherService.test());
+    }
+
 
 }
 

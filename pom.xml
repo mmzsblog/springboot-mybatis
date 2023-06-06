@@ -42,6 +42,14 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+        <!-- 多数据源处理：使用参考文章 https://github.com/baomidou/dynamic-datasource-spring-boot-starter -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+
+
 
     </dependencies>
 
